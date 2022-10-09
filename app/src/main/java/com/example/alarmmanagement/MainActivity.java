@@ -88,8 +88,10 @@ import java.util.Calendar;
 
             pendingIntent = PendingIntent.getBroadcast(this,0,intent,0);
 
-            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),
-                    AlarmManager.INTERVAL_DAY,pendingIntent);
+//            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),
+//                    AlarmManager.INTERVAL_DAY,pendingIntent);
+
+            alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),pendingIntent);
 
             Toast.makeText(this, "Alarm set Successfully", Toast.LENGTH_SHORT).show();
 
